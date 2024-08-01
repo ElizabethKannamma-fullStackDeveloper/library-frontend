@@ -44,7 +44,7 @@ function ReturnBook() {
 
     let getUsers = async () => {
         try {
-            const details = await axios.get(`http://localhost:8080/api/books/${params.id}`);
+            const details = await axios.get(`https://books-backend-jdhb.onrender.com/api/books/${params.id}`);
             setBookCount(details.data.book_count);
             myFormik.setValues(details.data);
             setLoading(false);
@@ -70,7 +70,7 @@ function ReturnBook() {
         onSubmit: async (values) => {
             try {
                 setLoading(true);
-                await axios.put(`http://localhost:8080/api/books/${params.id}`, values);
+                await axios.put(`https://books-backend-jdhb.onrender.com/api/books/${params.id}`, values);
             } catch (error) {
                 console.log(error);
                 setLoading(false);

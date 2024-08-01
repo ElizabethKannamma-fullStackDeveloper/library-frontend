@@ -10,7 +10,7 @@ function Member() {
 
     let getUsers = async () => {
         try {
-            const users = await axios.get("http://localhost:8080/api/teachers/");
+            const users = await axios.get("https://books-backend-jdhb.onrender.com/api/teachers/");
             setmemberdata(users.data);
 
         } catch (error) {

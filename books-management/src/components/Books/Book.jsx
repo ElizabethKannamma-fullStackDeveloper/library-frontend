@@ -30,7 +30,7 @@ function Book() {
 
     let getUsers = async () => {
         try {
-            const users = await axios.get("http://localhost:8080/api/books/");
+            const users = await axios.get("https://books-backend-jdhb.onrender.com/api/books/");
             setbookData(users.data);
             setLoading(false);
         } catch (error) {
@@ -42,7 +42,7 @@ function Book() {
         const confirm = window.confirm("Do you want to delete this record?")
 
         if (confirm) {
-            await axios.delete(`http://localhost:8080/api/books/${id}`);
+            await axios.delete(`https://books-backend-jdhb.onrender.com/api/books/${id}`);
             getUsers();
         }
     };

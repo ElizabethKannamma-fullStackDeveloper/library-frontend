@@ -30,7 +30,7 @@ function EditBooks() {
 
     let getUsers = async () => {
         try {
-            const details = await axios.get(`http://localhost:8080/api/books/${id}`);
+            const details = await axios.get(`https://books-backend-jdhb.onrender.com/api/books/${id}`);
             myFormik.setValues(details.data);
             setLoading(false);
         } catch (error) {
@@ -51,7 +51,7 @@ function EditBooks() {
         onSubmit: async (values) => {
             try {
                 setLoading(true);
-                await axios.put(`http://localhost:8080/api/books/${id}`, values);
+                await axios.put(`https://books-backend-jdhb.onrender.com/api/books/${id}`, values);
             } catch (error) {
                 console.log(error);
                 setLoading(false);
